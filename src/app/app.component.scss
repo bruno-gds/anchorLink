@@ -1,0 +1,14 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.box-text {
+  margin-top: 60px;
+  overflow: auto;
+  scroll-behavior: smooth;
+  height: 700px;
+  width: 600px;
+}
