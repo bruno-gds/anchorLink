@@ -5,12 +5,12 @@
   <p routerLink="." fragment="4" style="cursor: pointer"><b>ID 4</b></p>
   <p routerLink="." fragment="5" style="cursor: pointer"><b>ID 5</b></p>
   <span>
-    - Intern search:
-    <p (click)="jump(2)" style="cursor: pointer; margin-left: 20px"><b>ID 4</b></p>
+    - Personalized search:
+    <p (click)="jump(2)" style="cursor: pointer; margin-left: 20px"><b>ID 2</b></p>
   </span>
 </div>
 
-<div class="box-text">
+<div class="box-text" #box [scrollTop]="box.scrollHeight">
   <div *ngFor="let name of names" [attr.id]="name.id">
     <p><b>Nome:</b> {{ name.name }} - <b>ID:</b> {{ name.id }}</p>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
