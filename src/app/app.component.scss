@@ -5,10 +5,26 @@
   margin-top: 40px;
 }
 
-.box-text {
-  margin-top: 60px;
-  overflow: auto;
-  scroll-behavior: smooth;
-  height: 700px;
-  width: 600px;
+.flex {
+  display: flex;
+  .box-text {
+    margin-top: 60px;
+    overflow: auto;
+    scroll-behavior: smooth;
+    height: 700px;
+    width: 600px;
+  }
+  .container {
+    margin-top: 30px;
+    margin-left: 100px;
+    button {
+      background: transparent;
+      border: 0;
+      transform: translateX(-40px);
+      cursor: pointer;
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
 }

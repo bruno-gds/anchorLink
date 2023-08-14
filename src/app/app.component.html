@@ -10,10 +10,32 @@
   </span>
 </div>
 
-<div class="box-text" #box [scrollTop]="box.scrollHeight">
-  <div *ngFor="let name of names" [attr.id]="name.id">
-    <p><b>Nome:</b> {{ name.name }} - <b>ID:</b> {{ name.id }}</p>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="flex">
+  <div class="box-text" #box [scrollTop]="box.scrollHeight">
+    <div *ngFor="let name of names" [attr.id]="name.id">
+      <p><b>Nome:</b> {{ name.name }} - <b>ID:</b> {{ name.id }}</p>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>Test with input Emojis</h3>
+    <textarea
+      placeholder="Type a message"
+      type="text"
+      name="textarea"
+      [(ngModel)]="textArea"
+    ></textarea>
+
+    <button (click)="isEmojiPickerVisible = !isEmojiPickerVisible">😀</button>
+    <emoji-mart
+      class="emoji-mart"
+      *ngIf="isEmojiPickerVisible"
+      (emojiSelect)="addEmoji($event)"
+      title="Escolha seu emoji"
+      [darkMode]=isDarkMode
+      color="green"
+    ></emoji-mart>
   </div>
 </div>

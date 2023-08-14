@@ -7,6 +7,7 @@ import {AfterContentChecked, ChangeDetectorRef, Component} from '@angular/core';
 })
 export class AppComponent implements AfterContentChecked {
 
+  // SCROOL
   title = 'anchor-link';
   names = [
     { name: 'João', id: 1 },
@@ -15,6 +16,11 @@ export class AppComponent implements AfterContentChecked {
     { name: 'Pedro', id: 4 },
     { name: 'Ana', id: 5 }
   ];
+  // EMOJIS
+  textArea: string = "";
+  isEmojiPickerVisible: boolean = false;
+  isDarkMode: boolean = false;
+
 
   public constructor(
     private changeDetectorRef: ChangeDetectorRef
@@ -26,5 +32,10 @@ export class AppComponent implements AfterContentChecked {
 
   jump(id: number) {
     document.getElementById(id.toString())!!.scrollIntoView();
+  }
+
+  addEmoji(event: any) {
+    this.textArea = `${this.textArea}${event.emoji.native}`;
+    this.isEmojiPickerVisible = false;
   }
 }
